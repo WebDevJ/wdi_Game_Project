@@ -9,8 +9,8 @@ Welcome to the end of the world...
 
 ---
 ### User Story
-
 I as a User:
+
 
 * **should get a directions page before I play**
 * **can Switch turns** between two players
@@ -25,4 +25,6 @@ I as a User:
 * will know when the round is over
 * will know what player has **won** and be able to see the winning score
 * will then have a restart button to play again.
+
+
 ---
