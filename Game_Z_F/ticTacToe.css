@@ -1,0 +1,287 @@
+body {
+/*  background-image: url(background.jpg);*/
+background-color: black;
+}
+
+#wrapper {
+    width: 1100px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: black;
+    padding: 20px;
+
+    /*border-radius: 20px;*/
+    /*display: inline-block;*/
+    /*float: left;*/
+}
+/*---------------- CONTENT on RIGHT SIDE  ----------------------*/
+
+.text{
+  color: red;
+}
+
+.rsMenu{
+  border: 1px solid black;
+  border-radius: 20px;
+  height: auto;
+  height: 100px;
+  text-align: center;
+  background-color: gray;
+
+  /*align-content: center;*/
+
+
+}
+
+#rightSide {
+  width: 300px;
+  height: 600px;
+  /*background-color: gray;*/
+  border-radius: 20px;
+  float: right;
+  left: 28px;
+  bottom: 2%;
+  position: relative;;
+
+
+
+  /*display: inline-block;*/
+}
+
+/*------ CONTENT rightSide ID's -----------*/
+
+#timer{
+  height: 100px;
+  width: 300px;
+
+
+  /*line-height: 50px;*/
+}
+
+#timer h1{
+  text-align: center;
+  vertical-align: middle; /* hi Future 'james' USE THIS FOR <h1>wrapped in #timer <> instead*/
+  font-size: 30px; !important
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  display:block;
+  background-color: black;
+  color: white;
+  /*line-height: 20px; /*same as containers height*/*/
+}
+
+#score {
+  height: 100px;
+  width: 300px;
+  border-bottom-left-radius:  20px;}
+
+}
+#score h1{
+  vertical-align: middle;
+  font-size: 100px;
+  text-align: center;
+  color: red;
+
+ }
+
+
+
+#gameMsg{
+  height: 190px;
+  width: 300px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+  /*font-size: 42; !important*/
+}
+#gameMsg h1{
+  text-align: center;
+  vertical-align: middle;
+  font-size: 49px; !important
+  margin-left: auto;
+  margin-right: auto;
+  /*margin-bottom: 20px;*/
+  /*line-height: 20px; /*same as containers height*/*/
+}
+
+
+#gameMsg p{
+  text-align: center;
+  vertical-align: middle;
+  font-size: 30px; !important
+  margin-left: auto;
+  margin-right: auto;
+  /*margin-bottom: 20px;*/
+  /*line-height: 20px; /*same as containers height*/*/
+}
+
+
+
+#playerUp {
+  height: 100px;
+  width: 300px;
+
+}
+#playerUp p{
+font-size: 30px; !important
+vertical-align: middle;
+line-height: 1px;
+}
+
+#start {
+  height: 100px;
+  width: 300px;
+
+}
+
+#start button{
+  vertical-align: middle;
+
+
+}
+
+
+/*--------------------------------------*/
+
+.cover {
+  width: 825px;
+  height: 574px;
+  background-color: black;
+  border-radius: 20px;
+  float: left;
+  z-index: 1;
+  position: absolute;
+}
+
+#mainScreen {
+  width: 1100px;
+  height: 574px;
+  background-color: gray;
+  border-radius: 20px;
+  float: left;
+  z-index: 0;
+
+
+  /*display: inline-block;*/
+}
+.enemy{
+  width: 75px;
+  height: 80px;
+  /*background-color: red;*/
+ /*background-image: url('zombieFace.png');*/
+text-align: center;
+  /*background-image: url('../images/header-shade.jpg');*/
+  vertical-align: middle;
+  display: inline-block;
+
+
+}
+
+
+
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+div #a1 {top: 9%; position: relative;}
+div #a2 {top: 29%; position: relative;}
+div #a3 {top: 82%; position: relative;}
+div #a4 {top: 77%; position: relative;}
+div #a5 {top: 32%; position: relative;}
+div #a6 {top: 78%; position: relative;}
+div #a7 {top: 15%; position: relative;}
+div #a8 {top: 40%; position: relative;}
+div #a9 {top: 57%; position: relative;}
+div #a10 {top: 62%; position: relative;}
+
+
+/*----------------Below is test css markUP----------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+
+/*--------------------------------------*/
+
+#theX {
+  font-size: 44;
+}
+
+#mainTitle {
+  font-family: cursive;
+  font-size: 40px;
+  text-align: center;
+  color: black;
+  display: block;
+  align-content: center;
+  margin-left: auto;
+    margin-right: auto;
+    width: 10em
+
+}
+
+button {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: block;
+
+}
+
+
+
+
+
+
+
+
+
+#div .box {
+font-size: 24;
+
+}
+
+#boardContainer {
+  margin: 0 auto;
+
+}
+
+
+.box {
+
+  border-color: white;
+  border-style: solid;
+  border-width: medium;
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 42; !important
+  text-align: center;
+  opacity: .4;
+
+}
+/*
+.row1 {
+
+  display: table-cell;
+}
+
+.row2 {
+  display: table-cell;
+
+}
+
+.row3 {
+  display: table-cell;
+
+}*/
+
+
+
+#board {
+
+  border-color: black;
+  border-style: solid;
+  border-width: medium;
