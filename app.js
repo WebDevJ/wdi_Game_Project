@@ -16,6 +16,17 @@ var player2Score = 0; // place to store globally
 var removeCover;
 //OBJECT LITERIAL for game
 
+//--------//--------
+//animation
+// function spring() {
+// $enemy.velocity({ scale: 1.25, translateY: 60, boxShadowBlur: 35 });
+// }
+
+// $($enemy).velocity({ width: 540 }, [ 250, 15 ]);
+
+//--------//--------
+
+
 
 var game = { //
   player1: 'player one',
@@ -25,7 +36,6 @@ var game = { //
   firstScore: 0,
   secoundScore: 0,
   // seconds: 5,
-    // { moveSpring: ".enemy", scale: 1.25, translateY: 60, boxShadowBlur: 35 },
 
   //-------------startTheTimer2-----------------
   startTheTimer2: function(){
@@ -65,6 +75,7 @@ var game = { //
    },//CLOSE startTheTimer2 function
 
 //-------------startTheTimer-----------------
+
   startTheTimer: function(){
     if( game.whoShoots !== game.player1) {
     var seconds= 2;
@@ -72,9 +83,11 @@ var game = { //
      game.whoShoots = game.player1;//----USED in nextShooterTurn function
 
      $enemy.on('click', function(){
+
         game.scoreCount+= 123;
         console.log('hit');
         $gameScore.text(game.scoreCount);
+
       })
 
 
@@ -162,8 +175,6 @@ if(game.firstScore > game.secoundScore){
 },
 
 
-//--------//--------
-//--------//--------
 
 
 }//CLOSE GAME OBJECT LITERIAL
@@ -177,14 +188,35 @@ if(game.firstScore > game.secoundScore){
   $($gameStart).on('click', function(){
       if(game.scoreCount === 0){
     game.startTheTimer();
-   }
+      $enemy.velocity(
+         {scale: -0.25, translateY: 50,}
+       );//close animation
+       $enemy.velocity("reverse");
+//repeat animation
+       $enemy.velocity(
+          {scale: -0.25, translateY: 50,}
+        );//close animation
+        $enemy.velocity("reverse");
+
+      // { YOUR_PROPERTY: "YOUR_VALUE", scale: 1.25, translateY: 50, boxShadowBlur: 35 }
+   }//CLOSED  - --- game.startTheTimer
+
    else if (game.scoreCount !== 0){
     game.startTheTimer2();
+    $enemy.velocity(
+      {scale: -0.25, translateY: 50,}
+    );//close animation
+    $enemy.velocity("reverse");
+//repeat animation
+    $enemy.velocity(
+       {scale: -0.25, translateY: 50,}
+     );//close animation
+     $enemy.velocity("reverse");
+   }//CLOSED  - --- game.startTheTimer
 
-   }
    removeCover = $('.cover').detach();
-  //  { YOUR_PROPERTY: "YOUR_VALUE", scale: 1.25, translateY: 60, boxShadowBlur: 35 }
 
+  //  { YOUR_PROPERTY: "YOUR_VALUE", scale: 1.25, translateY: 60, boxShadowBlur: 35 }
 });
 
 
