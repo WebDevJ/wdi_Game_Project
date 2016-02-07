@@ -43,7 +43,7 @@ var game = { //
   startTheTimer2: function(){
     if( game.whoShoots === game.player2 ) { //LASTCHANGED
        $($playerShooting).text('PLAYER 2 Shooting ');
-    var seconds= 2;
+    var seconds= 3;
     game.$gameScore = 0; /// LAST CHANGE //----------------------
     game.scoreCount = 0;// CLEAR scoreCount TO ZERO ON START for next player
     $enemy.on('click', function(){
@@ -80,7 +80,7 @@ var game = { //
 
   startTheTimer: function(){
     if( game.whoShoots !== game.player1) {
-    var seconds= 2;
+    var seconds= 3;
      //$($ball).off('click'); LOOK THIS UP
      game.whoShoots = game.player1;//----USED in nextShooterTurn function
      console.log('------ ' + game.whoShoots +    ' ----------');
