@@ -11,6 +11,7 @@ var $gamePlayMsg= $('#gameMsg p'); // msg to user
 var $playerShooting= $('#playerUp p'); // what player is up
 var $gameStart= $('#start'); // starts game
 var $enemy= $('.enemy'); // shooting Targets
+var $zombieYell= $('.zombieYell');
 var player1Score = 0; // place to store globally
 var player2Score = 0; // place to store globally
 var removeCover;
@@ -35,7 +36,7 @@ var game = { //
   whoShoots: '',
   firstScore: 0,
   secoundScore: 0,
-  // seconds: 5,
+  // seconds: 5,  
 
   //-------------startTheTimer2-----------------
   startTheTimer2: function(){
@@ -81,12 +82,15 @@ var game = { //
     var seconds= 2;
      //$($ball).off('click'); LOOK THIS UP
      game.whoShoots = game.player1;//----USED in nextShooterTurn function
+     console.log('------ ' + game.whoShoots +    ' ----------');
 
      $enemy.on('click', function(){
 
         game.scoreCount+= 123;
         console.log('hit');
+        $zombieYell
         $gameScore.text(game.scoreCount);
+
 
       })
 
@@ -140,13 +144,14 @@ var game = { //
 
     $gameScore.text('0');
     console.log('player1 score CLEARed from html NOT gamefunction = ' + game.scoreCount);
-    if( game.whoShoots === game.player1 && game.firstScore !== 0){
+    removeCover.appendTo('#wrapper');// HIDDEN TARGETS BEFORE THIS CODE// GOOD CHNANGE keep it 
+    if( game.whoShoots === 'player one'){ //CHANGED @ 2pm day ( game.whoShoots === game.player1 && game.firstScore !== 0){
       console.log('player2 up');
        game.whoShoots = game.player2;//SWITCH PLAYERS
 
     // $($playerShooting).text('PLAYER 2 Get READY');
     $($playerShooting).text('PLAYER 2 Press start');
-    removeCover.appendTo('#wrapper');//remove//_______ HERE LAST
+    // removeCover.appendTo('#wrapper');//remove// CHNAGED AT 3pm
 
     }
 
@@ -189,27 +194,27 @@ if(game.firstScore > game.secoundScore){
       if(game.scoreCount === 0){
     game.startTheTimer();
       $enemy.velocity(
-         {scale: -0.25, translateY: 50,}
+         {scale: -0.09, translateY: 100, translateX: 400, }
        );//close animation
        $enemy.velocity("reverse");
 //repeat animation
        $enemy.velocity(
-          {scale: -0.25, translateY: 50,}
+          {scale: -0.09, translateY: 800, translateX: 100,}
         );//close animation
         $enemy.velocity("reverse");
 
       // { YOUR_PROPERTY: "YOUR_VALUE", scale: 1.25, translateY: 50, boxShadowBlur: 35 }
    }//CLOSED  - --- game.startTheTimer
 
-   else if (game.scoreCount !== 0){
+   else if (game.scoreCount !== 0){ //CHaNGED @ 2pm - day3 (game.scoreCount !== 0){
     game.startTheTimer2();
     $enemy.velocity(
-      {scale: -0.25, translateY: 50,}
+      {scale: -0.09, translateY: 100, translateX: 400,}
     );//close animation
     $enemy.velocity("reverse");
 //repeat animation
     $enemy.velocity(
-       {scale: -0.25, translateY: 50,}
+       {scale: -0.09, translateY: 800, translateX: 100,}
      );//close animation
      $enemy.velocity("reverse");
    }//CLOSED  - --- game.startTheTimer
