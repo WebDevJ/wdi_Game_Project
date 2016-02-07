@@ -1,5 +1,4 @@
 body {
-/*  background-image: url(background.jpg);*/
 background-color: black;
 }
 
@@ -26,6 +25,8 @@ background-color: black;
 
 
 #wrapper {
+    position: relative;
+    top: 80px;
     width: 1100px;
     height: 600px;
     margin: 0 auto;
@@ -42,20 +43,7 @@ background-color: black;
   color: red;
 }
 
-.rsMenu{
-  border: 1px solid black;
-  border-radius: 20px;
-  height: auto;
-  height: 100px;
-  text-align: center;
-  background-color: gray;
-  margin: 0;
-  padding: 0;
 
-  /*align-content: center;*/
-
-
-}
 
 #rightSide {
   width: 300px;
@@ -206,10 +194,13 @@ text-align: center;
 
 
 
-img {
+img { /*all images will resize in container*/ 
     max-width: 100%;
     max-height: 100%;
 }
+
+
+
 div #a1 {top: 9%; position: relative;}
 div #a2 {top: 29%; position: relative;}
 div #a3 {top: 82%; position: relative;}
@@ -219,97 +210,114 @@ div #a6 {top: 78%; position: relative;}
 div #a7 {top: 15%; position: relative;}
 div #a8 {top: 40%; position: relative;}
 div #a9 {top: 57%; position: relative;}
-
-div #a10 {
-        top: 62%; position: relative;
-         left: -28px;
-       }
+div #a10 {top: 62%; position: relative;left: -28px;}
 
 
-/*----------------Below is test css markUP----------------------*/
-/*--------------------------------------*/
-/*--------------------------------------*/
 
-/*--------------------------------------*/
 
-#theX {
-  font-size: 44;
+
+/*Credit -  * Hover.css (http://ianlunn.github.io/Hover/)*/
+/* Pulse */
+@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
 }
 
-#mainTitle {
-  font-family: cursive;
-  font-size: 40px;
-  text-align: center;
-  color: black;
-  display: block;
-  align-content: center;
-  margin-left: auto;
-    margin-right: auto;
-    width: 10em
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
 
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
 }
+
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+
+
 
 button {
     margin-left: auto;
     margin-right: auto;
     position: relative;
     display: block;
+    color: red;
+    
+   /* padding: 10px 20px;
+    position: absolute;
+    right: 10px;
+    top: 37px*/
 
 }
 
-
-
-
-
-
-
-
-
-#div .box {
-font-size: 24;
-
-}
-
-#boardContainer {
-  margin: 0 auto;
-
-}
-
-
-.box {
-
-  border-color: white;
-  border-style: solid;
-  border-width: medium;
-  height: 150px;
-  width: 150px;
-  display: inline-block;
-  vertical-align: top;
-  font-size: 42; !important
+.rsMenu{
+  border: 1px solid black;
+  border-radius: 20px;
+  height: auto;
+  height: 100px;
   text-align: center;
-  opacity: .4;
+  background-color: gray;
+  margin: 0;
+  padding: 0;
+/*Credit jeffrey Faden -  */
+  background: #77A2B5;
+    background: -moz-linear-gradient(top, rgba(119, 162, 181, 1) 0%, rgba(0, 82, 117, 1) 100%);
+    /* FF3.6  */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(119, 162, 181, 1)), color-stop(100%, rgba(0, 82, 117, 1)));
+    /* Chrome,Safari4  */
+    background: -webkit-linear-gradient(top, rgba(119, 162, 181, 1) 0%, rgba(0, 82, 117, 1) 100%);
+    /* Chrome10 ,Safari5.1  */
+    background: -o-linear-gradient(top, rgba(119, 162, 181, 1) 0%, rgba(0, 82, 117, 1) 100%);
+    /* Opera 11.10  */
+    background: -ms-linear-gradient(top, rgba(119, 162, 181, 1) 0%, rgba(0, 82, 117, 1) 100%);
+    /* IE10  */
+    background: linear-gradient(to bottom, rgba(119, 162, 181, 1) 0%, rgba(0, 82, 117, 1) 100%);
+    /* W3C */
+    /* IE6-9 */
+    border: 1px solid #002344;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5) inset, -1px -1px 1px rgba(0, 0, 0, 0.5) inset;
+    -webkit-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5) inset, -1px -1px 1px rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5) inset, -1px -1px 1px rgba(0, 0, 0, 0.5) inset;
+    color: black;
+/*    font-size: 30px;
+*/
+  /*align-content: center;*/
+
 
 }
-/*
-.row1 {
-
-  display: table-cell;
-}
-
-.row2 {
-  display: table-cell;
-
-}
-
-.row3 {
-  display: table-cell;
-
-}*/
 
 
 
-#board {
-
-  border-color: black;
-  border-style: solid;
-  border-width: medium;

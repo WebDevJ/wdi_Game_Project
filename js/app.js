@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+console.log('app.js is loaded and ready');  
 var counter= 0; // tic tac toe IGNORE
 //---------------------------------------
 //---------------------------------------
@@ -187,7 +188,7 @@ if(game.firstScore > game.secoundScore){
 //GAME EVENT LIsteners
 
 //$(function() { DO NOT Need this
-  console.log('jquery is now running');
+ 
 
   //$($gameStart).on('click', game.start); //WILL WRITE THIS NEXT
   $($gameStart).on('click', function(){
