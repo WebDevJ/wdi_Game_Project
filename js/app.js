@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+console.log('app.js is loaded and ready');  
 var counter= 0; // tic tac toe IGNORE
 //---------------------------------------
 //---------------------------------------
@@ -11,10 +12,22 @@ var $gamePlayMsg= $('#gameMsg p'); // msg to user
 var $playerShooting= $('#playerUp p'); // what player is up
 var $gameStart= $('#start'); // starts game
 var $enemy= $('.enemy'); // shooting Targets
+var $zombieYell= $('.zombieYell');
 var player1Score = 0; // place to store globally
 var player2Score = 0; // place to store globally
 var removeCover;
 //OBJECT LITERIAL for game
+
+//--------//--------
+//animation
+// function spring() {
+// $enemy.velocity({ scale: 1.25, translateY: 60, boxShadowBlur: 35 });
+// }
+
+// $($enemy).velocity({ width: 540 }, [ 250, 15 ]);
+
+//--------//--------
+
 
 
 var game = { //
@@ -24,14 +37,13 @@ var game = { //
   whoShoots: '',
   firstScore: 0,
   secoundScore: 0,
-  // seconds: 5,
-    // { moveSpring: ".enemy", scale: 1.25, translateY: 60, boxShadowBlur: 35 },
+  // seconds: 5,  
 
   //-------------startTheTimer2-----------------
   startTheTimer2: function(){
     if( game.whoShoots === game.player2 ) { //LASTCHANGED
        $($playerShooting).text('PLAYER 2 Shooting ');
-    var seconds= 2;
+    var seconds= 3;
     game.$gameScore = 0; /// LAST CHANGE //----------------------
     game.scoreCount = 0;// CLEAR scoreCount TO ZERO ON START for next player
     $enemy.on('click', function(){
@@ -65,16 +77,22 @@ var game = { //
    },//CLOSE startTheTimer2 function
 
 //-------------startTheTimer-----------------
+
   startTheTimer: function(){
     if( game.whoShoots !== game.player1) {
-    var seconds= 2;
+    var seconds= 3;
      //$($ball).off('click'); LOOK THIS UP
      game.whoShoots = game.player1;//----USED in nextShooterTurn function
+     console.log('------ ' + game.whoShoots +    ' ----------');
 
      $enemy.on('click', function(){
+
         game.scoreCount+= 123;
         console.log('hit');
+        $zombieYell
         $gameScore.text(game.scoreCount);
+
+
       })
 
 
@@ -127,13 +145,14 @@ var game = { //
 
     $gameScore.text('0');
     console.log('player1 score CLEARed from html NOT gamefunction = ' + game.scoreCount);
-    if( game.whoShoots === game.player1 && game.firstScore !== 0){
+    removeCover.appendTo('#wrapper');// HIDDEN TARGETS BEFORE THIS CODE// GOOD CHNANGE keep it 
+    if( game.whoShoots === 'player one'){ //CHANGED @ 2pm day ( game.whoShoots === game.player1 && game.firstScore !== 0){
       console.log('player2 up');
        game.whoShoots = game.player2;//SWITCH PLAYERS
 
     // $($playerShooting).text('PLAYER 2 Get READY');
     $($playerShooting).text('PLAYER 2 Press start');
-    removeCover.appendTo('#wrapper');//remove//_______ HERE LAST
+    // removeCover.appendTo('#wrapper');//remove// CHNAGED AT 3pm
 
     }
 
@@ -162,8 +181,6 @@ if(game.firstScore > game.secoundScore){
 },
 
 
-//--------//--------
-//--------//--------
 
 
 }//CLOSE GAME OBJECT LITERIAL
@@ -171,20 +188,41 @@ if(game.firstScore > game.secoundScore){
 //GAME EVENT LIsteners
 
 //$(function() { DO NOT Need this
-  console.log('jquery is now running');
+ 
 
   //$($gameStart).on('click', game.start); //WILL WRITE THIS NEXT
   $($gameStart).on('click', function(){
       if(game.scoreCount === 0){
     game.startTheTimer();
-   }
-   else if (game.scoreCount !== 0){
+      $enemy.velocity(
+         {scale: -0.09, translateY: 100, translateX: 400, }
+       );//close animation
+       $enemy.velocity("reverse");
+//repeat animation
+       $enemy.velocity(
+          {scale: -0.09, translateY: 800, translateX: 100,}
+        );//close animation
+        $enemy.velocity("reverse");
+
+      // { YOUR_PROPERTY: "YOUR_VALUE", scale: 1.25, translateY: 50, boxShadowBlur: 35 }
+   }//CLOSED  - --- game.startTheTimer
+
+   else if (game.scoreCount !== 0){ //CHaNGED @ 2pm - day3 (game.scoreCount !== 0){
     game.startTheTimer2();
+    $enemy.velocity(
+      {scale: -0.09, translateY: 100, translateX: 400,}
+    );//close animation
+    $enemy.velocity("reverse");
+//repeat animation
+    $enemy.velocity(
+       {scale: -0.09, translateY: 800, translateX: 100,}
+     );//close animation
+     $enemy.velocity("reverse");
+   }//CLOSED  - --- game.startTheTimer
 
-   }
    removeCover = $('.cover').detach();
-  //  { YOUR_PROPERTY: "YOUR_VALUE", scale: 1.25, translateY: 60, boxShadowBlur: 35 }
 
+  //  { YOUR_PROPERTY: "YOUR_VALUE", scale: 1.25, translateY: 60, boxShadowBlur: 35 }
 });
 
 
