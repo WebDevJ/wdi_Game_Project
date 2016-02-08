@@ -10,12 +10,16 @@ var $gameTimer= $('#timer h1'); // Shooter Timer
 var $gameScore= $('#score h1'); // score
 var $gamePlayMsg= $('#gameMsg p'); // msg to user
 var $playerShooting= $('#playerUp p'); // what player is up
-var $gameStart= $('#start'); // starts game
+var $gameStart= $('#startGame'); // starts game
 var $enemy= $('.enemy'); // shooting Targets
 var $zombieYell= $('.zombieYell');
 var player1Score = 0; // place to store globally
 var player2Score = 0; // place to store globally
 var removeCover;
+var $gun= $('.gun');
+
+var audio= $($gun)[0];
+var audio2= $($zombieYell)[0];
 //OBJECT LITERIAL for game
 
 //--------//--------
@@ -46,11 +50,25 @@ var game = { //
     var seconds= 3;
     game.$gameScore = 0; /// LAST CHANGE //----------------------
     game.scoreCount = 0;// CLEAR scoreCount TO ZERO ON START for next player
+
     $enemy.on('click', function(){
         game.scoreCount+= 123;
         console.log('hit');
         $gameScore.text(game.scoreCount);
+        
       })
+    
+
+    $($enemy).click(function() {
+    audio.play();
+    });
+
+
+    $($enemy).click(function() {
+    audio2.play();
+    });
+    
+
      var mytimer = setInterval(updateTime, 1000);
      function updateTime(){
        seconds--;
@@ -89,11 +107,14 @@ var game = { //
 
         game.scoreCount+= 123;
         console.log('hit');
-        $zombieYell
         $gameScore.text(game.scoreCount);
-
+        // $zombieYell.play();
 
       })
+
+
+
+   
 
 
      $($playerShooting).text('PLAYER 1 Shooting ');
@@ -192,8 +213,11 @@ if(game.firstScore > game.secoundScore){
 
   //$($gameStart).on('click', game.start); //WILL WRITE THIS NEXT
   $($gameStart).on('click', function(){
+
       if(game.scoreCount === 0){
     game.startTheTimer();
+
+
       $enemy.velocity(
          {scale: -0.09, translateY: 100, translateX: 400, }
        );//close animation
@@ -226,6 +250,25 @@ if(game.firstScore > game.secoundScore){
 });
 
 
+
+
+
+
+$($enemy).click(function() {
+  audio.play();
+});
+
+
+$($enemy).click(function() {
+  audio2.play();
+});
+
+
+
+
+$('#restartGame').click(function() {
+    location.reload();
+});
 
 //});// CLOSE EVENT LIsteners
 
